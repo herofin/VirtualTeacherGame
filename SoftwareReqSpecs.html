@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+<TITLE>Software Requirements Specification</TITLE>
+</HEAD>
+
+<BODY LINK="#0000ff" VLINK="#800080">
+        <p style="text-align:center;"><b>COP4331C: Processes for Object Oriented Software Development</b></p>
+        <p style="text-align:center;"><b>Virtual Teacher/Mentor</b></p>
+        <p style="text-align:center;"><b>Software Requirements Specification</b></p>
+<B>
+<P ALIGN="CENTER">&nbsp;</P>
+</B><FONT SIZE=2> 
+<P>Modification history: </P>
+</FONT> 
+<table BORDER cellspacing=1 cellpadding=7 width=711>
+  <tr> 
+    <td width="15%" valign="TOP"> 
+      <p><font size=2>Version</font> 
+    </td>
+    <td width="18%" valign="TOP"> 
+      <p><font size="2">Date </font>
+    </td>
+    <td width="25%" valign="TOP"> 
+      <p><font size="2">Who </font>
+    </td>
+    <td width="42%" valign="TOP"> 
+      <p><font size="2">Comment </font>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" valign="TOP"> 
+      <p><font size="2">v1.0 </font>
+    </td>
+    <td width="18%" valign="TOP"> 
+      <p><font size="2">9/16/12</font>
+    </td>
+    <td width="25%" valign="TOP"> 
+      <p><font size="2">Jason Shih, Kevin Krutek </font>
+    </td>
+    <td width="42%" valign="TOP"> 
+      <p><font size="2">Completed SRS</font>
+    </td>
+  </tr>
+</table>
+<FONT SIZE=2>
+<P>&nbsp; </P>
+</FONT> <FONT SIZE=2>
+<P>Team Name: Team #14</P>
+
+<P>Team Members:</P>
+
+<ul>
+    <li><font size="2">Anthony Delprete - <a href="mailto:adelprete@knights.ucf.edu">adelprete@knights.ucf.edu</a></font></li>
+    <li><font size="2">Jason Shipman - <a href="mailto:thearmorywars@gmail.com">thearmorywars@gmail.com</a></font></li>
+    <li><font size="2">Jason Shih - <a href="mailto:soulzityr@gmail.com">soulzityr@gmail.com</a></font></li>
+    <li><font size="2">Stephen Caskey - <a href="mailto:stevecask@knights.ucf.edu">stevecask@knights.ucf.edu</a></font></li>
+    <li><font size="2">Marlon Smith - <a href="mailto:marlonosmith@knights.ucf.edu">marlonosmith@knights.ucf.edu</a></font></li>
+    <li><font size="2">Kevin Kruetek - <a href=tronta@knights.ucf.edu">tronta@knights.ucf.edu</a></font></li>
+ </ul>
+
+</FONT><P><HR ALIGN="LEFT" WIDTH="90%"><p></P>
+
+<FONT SIZE=2><P ALIGN="CENTER">Contents of this Document</P></FONT><DIR><FONT SIZE=2>
+
+
+
+</font><P><A HREF="#Introduction"><FONT SIZE=2>Introduction</FONT></A></P></DIR>
+
+
+<UL>
+
+<UL>
+
+<LI><A HREF="#SoftwareToBeProduced"><FONT SIZE=2>Software to be Produced</FONT></A> </LI>
+
+<LI><A HREF="#ReferenceDocuments"><FONT SIZE=2>Reference Documents</FONT></A> </LI>
+
+<LI><A HREF="#ApplicableStandards"><FONT SIZE=2>Applicable Standards</FONT></A></LI></UL>
+
+</UL>
+
+<DIR>
+
+<P><A HREF="#DefinitionsAcronymsAbbreviations"><FONT SIZE=2>Definition, Acronyms, and Abbreviations</FONT></A></P>
+
+<P><A HREF="#ProductOverview"><FONT SIZE=2>Product Overview</FONT></A></P></DIR>
+
+<UL>
+
+<UL>
+
+<LI><A HREF="#Assumptions"><FONT SIZE=2>Assumptions</FONT></A> </LI>
+
+<LI><A HREF="#StakeHolders"><FONT SIZE=2>Stakeholders</FONT></A> </LI>
+
+<LI><A HREF="#EventTable"><FONT SIZE=2>Event Table</FONT></A> </LI>
+
+<LI><A HREF="#UseCaseDiagram"><FONT SIZE=2>Use Case Diagram</FONT></A> </LI>
+
+<LI><A HREF="#UseCaseDescriptions"><FONT SIZE=2>Use Case Descriptions</FONT></A></LI></UL>
+
+</UL>
+
+<DIR>
+
+<P><A HREF="#SpecificRequirements"><FONT SIZE=2>Specific Requirements</FONT></A></P></DIR>
+
+<UL>
+
+<UL>
+
+<LI><A HREF="#FunctionalRequirements"><FONT SIZE=2>Functional Requirements</FONT></A> </LI>
+
+<LI><A HREF="#InterfaceRequirements"><FONT SIZE=2>Interface Requirements</FONT></A> </LI>
+
+<LI><A HREF="#PhysicalEnvironmentRequirements"><FONT SIZE=2>Physical Environment Requirements</FONT></A> </LI>
+
+<LI><A HREF="#UsersHumanFactorsRequirements"><FONT SIZE=2>Users and Human Factors Requirements</FONT></A> </LI>
+
+<LI><A HREF="#DocumentationRequirements"><FONT SIZE=2>Documentation Requirements</FONT></A> </LI>
+
+<LI><A HREF="#DataRequirements"><FONT SIZE=2>Data Requirements</FONT></A> </LI>
+
+<LI><A HREF="#ResourceRequirements"><FONT SIZE=2>Resource Requirements</FONT></A> </LI>
+
+<LI><A HREF="#SecurityRequirements"><FONT SIZE=2>Security Requirements</FONT></A> </LI>
+
+<LI><A HREF="#QualityAssuranceRequirements"><FONT SIZE=2>Quality Assurance Requirements</FONT></A></LI></UL>
+
+</UL>
+
+<DIR>
+
+<P><A HREF="#SupportingMaterials"><FONT SIZE=2>Supporting Material</FONT></A></P></DIR>
+
+<P><HR><p></P>
+
+<FONT SIZE=2><P><A NAME="Introduction">SECTION 1: Introduction</A></P>
+
+<U><P><A NAME="SoftwareToBeProduced">Software to be Produced:</A></P>
+
+</U>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This program is designed to serve as an educational facility for a user between the ages 
+of 5 and 15. It will teach the user as a student a variety of subjects in math, history, language 
+arts, and science using a simulated school environment. The game will progress through a school 
+year where the student will learn subjects of mathematics, science, language arts, and history 
+starting from an elementary level and finishing at an entry-level college education.
+
+<U><P><A NAME="ReferenceDocuments">Reference Documents:</A></P>
+
+</U><UL><U>
+
+</u><LI><a href="concept.html">Concept of Operations</a></LI>
+
+<LI><a href="ProjectMgmtPlan.html">Project Management Plan</a></LI>
+</UL>
+
+
+<U><P><A NAME="ApplicableStandards">Applicable Standards:</A></P>
+
+
+
+</U><UL><U>
+
+</u>
+None
+
+  </UL>
+
+<P>&nbsp;<A NAME="DefinitionsAcronymsAbbreviations"></A><U>Definitions, Acronyms, and Abbreviations:</u></P><UL>
+
+<U>
+
+</u>None</UL>
+
+
+</FONT><P><HR><p></P>
+
+<FONT SIZE=2><P>SECTION 2: <A NAME="ProductOverview">Product Overview</A></P>
+
+<U><P><A NAME="Assumptions">Assumptions:</A></P>
+
+
+
+</U><UL><U>
+
+</u><li>The user will have a standard computer in this era.</li>
+  <li>User may need upwards of 2 gigs of RAM, at least a duo 
+core processor, a dedicated graphics card (low-end), Windows XP, Vista or 7 operating system.</li> 
+<li>The program should stand alone and not require other systems or external processes.</li>
+</UL>
+
+<U><P><A NAME="StakeHolders">Stakeholders:</A></P>
+
+
+
+</U><UL><U>
+
+</u><LI>Parents who want to see their children get outside education</LI>
+   <li>Children that want extra help with school</li>
+   <li>Tutors that can employ the software for their students</li>
+   <LI>Schools that want to see an overall improvement in their students’ academics</LI></UL>
+
+
+
+<U><P><A NAME="EventTable">Event Table</A>:</P>
+
+
+
+</U><UL><U>
+
+</u><LI>&lt;An event table identifies all the external events to which the software must respond. This is a first step in determining the required overall system functionality. The event list should be consistent with the context diagram and the interest of each stakeholder. Make sure that exceptions are considered.&gt; </LI>
+
+<LI>&lt;Use the following table format:&gt;</LI></UL>
+
+</FONT>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=715>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<P><FONT SIZE=2>Event Name</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>External Stimuli</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>External Responses</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Internal data and state</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Answer_Submit</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>Submits answers</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Answer_Type</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>
+Keyboard</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>Types in answers</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Text Box</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Answer_Select</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>Selects the text box</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Text Box</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Classroom_NextClass</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>
+goes to the next class</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Lecture_Next</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>progresses the lecture</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Lecture_Back</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>
+goes back in the lecture</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Menu_Options</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>goes to options in menu</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Menu_Start</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>
+goes into game</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Options_ChangeUser</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>changes profile currently logged in</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Options_MusicOn</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>turns on/off music</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Save</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>Saves the game</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+<TR><TD WIDTH="24%" VALIGN="TOP">
+<FONT SIZE=2><P>Homework_Report</FONT></TD>
+<TD WIDTH="22%" VALIGN="TOP">
+<FONT SIZE=2><P>Mouse Click</FONT></TD>
+<TD WIDTH="27%" VALIGN="TOP">
+<FONT SIZE=2><P>pulls up homework report</FONT></TD>
+<TD WIDTH="28%" VALIGN="TOP">
+<FONT SIZE=2><P>Button</FONT></TD>
+</TR>
+
+</TABLE>
+
+
+
+<FONT SIZE=2><P>&nbsp;</P>
+
+<U><P><A NAME="UseCaseDiagram">Use Case Diagram:</A></P>
+
+<img src="http://i.imgur.com/wlaS3.png?1">
+
+</U>
+
+
+<U><P><A NAME="UseCaseDescriptions">Use Case Descriptions:</A></P>
+
+
+
+</U><UL><U>
+
+</u>
+  Upon log in, the user will see a menu. The user can either start the game from the 
+  last save point or go into options where he will have the options to check his progress or 
+  make adjustments to his playing experience.
+</UL>
+
+
+
+</FONT><P><HR><p></P>
+
+<FONT SIZE=2><P><A NAME="SpecificRequirements">SECTION 3: Specific Requirements</A></P><DIR>
+
+
+
+</DIR>
+
+</FONT>
+
+
+<FONT SIZE=2><P>&nbsp;</P>
+
+<P><A NAME="FunctionalRequirements"><U>3.1 Functional Requirements</u>:</A></P>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 1</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall validate inputs to be numeric or alphanumeric where needed.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing of inputs shall determine if it is being validated.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 2</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall catch invalid inputs and recover gracefully.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: Dependent on 1</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing of inputs shall determine if it is recovering gracefully from errors.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 3</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall accurately grade inputs to determine their accuracy, display corresponding messages and modify grade values accordingly.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None </FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing will ensure that this works.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 4</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall follow the sequence of events outlined in our diagram.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<U><P>&nbsp;</P>
+
+<P><A NAME="InterfaceRequirements">3.2 Interface Requirements:</A></P>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 5</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall take as inputs answers to questions posed to users and grade their accuracy before returning this grade to the user.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 6</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The domain for valid input shall include all numeric or alphanumeric characters for free response questions, depending, and all possible choices in multiple choice questions.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 7</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Accuracy needed on inputs shall vary depending on the question. Unique accuracy domains are necessary for different types of questions.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: The design of the program shall define this.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 8</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Questions and answers will interchange at a rate of 1:1, and all data will be managed locally, so no timing or servers are necessary.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: The design of the program shall determine this.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 9</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Data received by the user must be completely accurate</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: A battery of tests and algorithm inspection will determine if data (questions and grades) is being presented to the user accurately</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="PhysicalEnvironmentRequirements">3.3Physical Environment Requirements:</A></P>
+
+</U><TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 10</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Users should be using a desktop or laptop computer with specifications noted.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: See system specs note in section 4</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: We will test that our software works on this platform with these specs</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 11</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Equipment will likely be located in the users’ homes or in a computer lab</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 12</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall require no unique climate conditions</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="UsersHumanFactorsRequirements">3.4 Users and Human Factors Requirements:</A></P>
+
+
+
+</U>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 13</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Users will primarily be students and their parents/teachers/tutors</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 14</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: All users should require no training outside of a basic tutorial. All user functionality must be simple and explicit to accommodate this. The assumed skill level for users in fairly low.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Extensive evaluations of all UI well be undertaken to ensure simplicity, and a tutorial will be created for users.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 15</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Some users may require special accommodations such as large fonts or text-to-speech.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: We will evaluate the potential special needs of users and decide on the appropriate course of action</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 16</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program should be adequately simple and should require only minimal protection against misuse. The only realistic misuse to be expected is students potentially modifying their grades or looking into answers. </FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Using basic password protection can ensure this. We will test the ability of these measures to be bypassed ourselves.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="DocumentationRequirements">3.5 Documentation Requirements:</A></P>
+
+</U>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 17</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall record grades and print them out, potentially in the form of certifications or report cards for the benefits of students. It will also print out a detailed analysis of the students’ grades and abilities for the tutor/parent.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: This will be tested</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 18</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The assumed audience level is relatively low and untrained for all users.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Documentation must be made correspondingly simple. This can be evaluated.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="DataRequirements">3.6 Data Requirements:</A></P>
+
+</U>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 19</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Data calculations will be kept simple with accuracy only to a few decimal places where needed. Grading is likely the most intensive part of this and will require only 2 points of accuracy. Math problems for students will used basic calculator math and will work primarily in integers.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: This will be decided in the design of the program.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 20</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program must retain grades for users indefinitely.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="ResourceRequirements">3.7 Resource Requirements:</A></P>
+
+</U>
+</br>
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 21</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program shall require no extended resources. It is an isolated piece of software. After production and some patches it will be entirely self sustaining and require no personnel, maintenance, space or climate.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: This is validated by our design.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="SecurityRequirements">3.8 Security Requirements:</A></P>
+
+</U>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 22</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: Access to system information should be controlled for multiple users.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 23</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: One account’s user data should be isolated from others</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+</br></br>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 24</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The system will save data to files and should not need to back up otherwise. No other precautions should be necessary.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Simple testing.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="QualityAssuranceRequirements">3.9 Quality Assurance Requirements:</A></P>
+
+</U>
+
+<TABLE BORDER CELLSPACING=1 BORDERCOLOR="#000000" CELLPADDING=7 WIDTH=638>
+<TR><TD VALIGN="TOP">
+<P><FONT SIZE=2>No: 25</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Statement: The program should be of fair quality and should not encounter faults that require outside maintenance. In the worst case, a reinstall should fix any problems. Thus, no special care needs to be taken.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Source: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Dependency: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Conflicts: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Supporting Materials: None</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Evaluation Method: Extensive testing will determine the quality of the program.</FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT SIZE=2><P>Revision History: V1.0, 9/17/12, Kevin Krutek</FONT></TD>
+</TR>
+</TABLE>
+
+
+<P>&nbsp;</P>
+
+<U><P><A NAME="SupportingMaterials">SECTION 4: Supporting Material</A></P>
+
+</U><UL>
+
+None
+
+</u> 
+
+
+
+
+
+</FONT><P><HR><p></P>
+<DIR> 
+  <DIR> 
+    <DIR> 
+      <p ALIGN="CENTER"><FONT SIZE=2>Template created by G. Walton (</font><A HREF="mailto:GWalton@mail.ucf.edu"><FONT SIZE=2>GWalton@mail.ucf.edu</FONT></A><FONT SIZE=2>) 
+        on Aug 30, 1999 and last updated Aug 15, 2000</font></p>
+    <p ALIGN="CENTER"><font size=2>This page last modified by Kevin Krutek(<a href="mailto:tronta@knights.ucf.edu">tronta@knights.ucf.edu</a> </font><font size=2>) , Jason Shih (<a href="mailto:soulzityr@gmail.com">soulzityr@gmail.com</a> </font><font size=2>) 
+        on 9/17/12</font></p>
+    </DIR>
+  </DIR>
+</DIR>
+
+</BODY>
+
+</HTML>
+
