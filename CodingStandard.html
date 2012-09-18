@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project Management Plan</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <p style="text-align:center;"><b>COP4331C: Processes for Object Oriented Software Development</b></p>
+        <p style="text-align:center;"><b>Virtual Teacher/Mentor</b></p>
+        <p style="text-align:center;"><b>Coding Standards</b></p>
+<p><font size="2">Modification history: </font></p>
+<table BORDER cellspacing=1 cellpadding=7 width=711>
+  <tr> 
+    <td width="15%" valign="TOP"> 
+      <p><font size=2>Version</font> 
+    </td>
+    <td width="18%" valign="TOP"> 
+      <p><font size="2">Date </font>
+    </td>
+    <td width="25%" valign="TOP"> 
+      <p><font size="2">Who </font>
+    </td>
+    <td width="42%" valign="TOP"> 
+      <p><font size="2">Comment </font>
+    </td>
+  </tr>
+  <tr> 
+    <td width="15%" valign="TOP"> 
+      <p><font size="2">v1.0 </font>
+    </td>
+    <td width="18%" valign="TOP"> 
+      <p><font size="2">09/17/12</font>
+    </td>
+    <td width="25%" valign="TOP"> 
+      <p><font size="2">J. Shipman</font>
+    </td>
+    <td width="42%" valign="TOP"> 
+      <p><font size="2">Completed first version</font>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><font size="2">Team Name: Team #14</font></p>
+<p><font size="2">Team Members:</font></p>
+<ul>
+    <li><font size="2">Anthony Delprete - <a href="mailto:adelprete@knights.ucf.edu">adelprete@knights.ucf.edu</a></font></li>
+    <li><font size="2">Jason Shipman - <a href="mailto:thearmorywars@gmail.com">thearmorywars@gmail.com</a></font></li>
+    <li><font size="2">Jason Shih - <a href="mailto:soulzityr@gmail.com">soulzityr@gmail.com</a></font></li>
+    <li><font size="2">Stephen Caskey - <a href="mailto:stevecask@knights.ucf.edu">stevecask@knights.ucf.edu</a></font></li>
+    <li><font size="2">Marlon Smith - <a href="mailto:marlonosmith@knights.ucf.edu">marlonosmith@knights.ucf.edu</a></font></li>
+    <li><font size="2">Kevin Kruetek - <a href=tronta@knights.ucf.edu">tronta@knights.ucf.edu</a></font></li>
+ </ul>
+ <hr>
+ <p><font size="2">
+     <ul>
+         <li>Imports</li>
+         <ul>
+             <li>Alphabetized</li>
+         </ul>
+         
+         <li>Classes</li>
+         <ul>
+             <li>Names should be no more than 3 to 4 words.</li>
+             <li>Distinct words in the name should be capitalized</li>
+             <ul>
+                 <li>Example: WorldMap</li>
+             </ul>
+             <li>Instances should be named with camel case</li>
+             <ul>
+                 <li>Example: worldMap</li>
+             </ul>
+             <li>Every class should be in its own source file with a .java extension.</li>
+             <li>Encapsulation should always be on your mind!</li>
+         </ul>
+
+         <li>Spacing</li>
+         <ul>
+             <li>All operators should be separated by a single space.</li>
+             <ul>
+                 <li>Example: float z = x * x + y * y;</li>
+             </ul>
+             <li>All curly brackets should be on there own line</li>
+             <ul>
+                 <li>Example:</li>
+                 <code>
+                     class SomeClass<br />
+                     {<br />
+                         <dir>// ...<br /></dir>
+                     }<br />
+                 </code>
+                 <li>Example:</li>
+                 <code>
+                     for (int i = 0; i < 2000; i++)<br />
+                     {<br />
+                         <dir>// ...<br /></dir>
+                     }<br />
+                 </code>
+             </ul>
+             <li>Statements that use curly brackets (for, while, etc) should be written with spaces as follows:</li>
+             <ul>
+                 <li>For loops:</li>
+                 <code>
+                     for (int i = 0; i < anotherInt; i++)<br />
+                     {<br />
+                         <dir>// ...<br /></dir>
+                     }<br />
+                 </code>
+                 <li>While loops:</li>
+                 <code>
+                     while (i < someInt)<br />
+                     {<br />
+                         <dir>// ...<br /></dir>
+                     }<br />
+                 </code>
+                 <li>Do-while loops:</li>
+                 <code>
+                     do<br />
+                     {<br />
+                         <dir>// ...<br /></dir>
+                         }<br />
+                     while (42 != meaningOfLife);<br />
+                 </code>
+                 <li>Try-catch blocks:</li>
+                 <code>
+                     try<br />
+                     {<br />
+                         <dir>// try to do something...<br /></dir>
+                     }<br />
+                     catch (Exception e)<br />
+                     {<br />
+                     <dir>// do something for this exceptional case...<br /></dir>
+                     }<br />
+                 </code>
+             </ul>
+             <li>Lines should be limited to 79 characters when possible. However, exceeding this limit is fine if the content is more readable on a single line.</li>
+         </ul>
+         <li>Comments</li>
+         <ul>
+             <li>Every class must have comments adhering to the Javadoc format. The class’s comment section should be like this:</li>
+             <code>
+                 /**<br />
+                * @author Firstname Lastname <address @ example.com>
+                * @version 1.6 (current version number of this program)<br />
+                */<br />
+                class ExampleClass<br />
+                {<br />
+                }<br />
+            </code>
+            <li>Individual methods of a class should have Javadoc comments as well. For example, assume the following method is inside the ExampleClass above:</li>
+            <code>
+                /**<br />
+                * Short one line description.<br />
+                *<br />
+                * Longer description (if needed)<br />
+                *<br />
+                * @param <variable_name> Description of this parameter.<br />
+                * @return Description of what this method returns.<br />
+                */<br />
+                // Method declaration goes here.<br />
+            </code>
+            <p>So, for example:</p>
+            <code>
+                /**<br />
+                * Checks for coolness.<br />
+                *<br />
+                * @param person The person being checked for coolness.<br />
+                * @return True if the Person is cool enough and is not a geezer, false otherwise.<br />
+                */<br />
+                public boolean isCool(Person person)<br />
+                {<br />
+                <dir>return person.popularity &gt; 15 &amp;&amp; person.age &lt; 100;<br /></dir>
+                }<br />
+            </code>
+
+         </ul>
+     </ul>
+ </font></p>
+
+    </body>
+</html>
